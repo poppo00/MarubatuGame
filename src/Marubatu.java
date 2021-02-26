@@ -40,6 +40,7 @@ public class Marubatu {
 			result = 4;
 			break;
 		default:
+				result = 0
 				System.out.println("存在しない盤面です．");
 		}
 		return result;
@@ -53,8 +54,11 @@ public class Marubatu {
 		}else {
 			System.out.println("CPU turn");
 		}
-
-		if(num <= 3) {
+		
+		if(num == 0){
+			//盤面が無いことを指示し再度入力させる
+			printError(player)
+		}else if(num <= 3) {
 			if(gameDisk[0][column] == ' ') {
 				setPiece(0,column,player);
 			}else {
@@ -110,6 +114,11 @@ public class Marubatu {
 			int num = cpuNumber();
 			placePiece(num,player);
 		}
+	}
+	void printError(boolean player){
+		System.out.println("1~9で再度入力してください : ");
+		int num_2 = sc.NextInt();
+		placePiece(num_2,player)
 	}
 
 	//勝利条件確認
