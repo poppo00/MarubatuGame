@@ -57,7 +57,7 @@ public class Marubatu {
 		
 		if(num == 0){
 			//盤面が無いことを指示し再度入力させる
-			printError(num,player)
+			printError(num,player);
 		}else if(num <= 3) {
 			if(gameDisk[0][column] == ' ') {
 				setPiece(0,column,player);
@@ -117,7 +117,7 @@ public class Marubatu {
 	}
 	void printError(int num,boolean player){
 		System.out.print("1~9で再度入力してください : ");
-		int num_2 = sc.NextInt();
+		int num_2 = sc.nextInt();
 		placePiece(num_2,player);
 	}
 
